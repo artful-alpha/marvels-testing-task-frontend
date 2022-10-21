@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import AllHero from "./Components/AllHero/AllHero";
+import { Route, Routes } from "react-router-dom";
+import HeroPage from "./Components/HeroPage.jsx/HeroPage";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='container'>
+        <h1 className='text-center mt-3 text-danger'>Marvel Heroes</h1>
+        <div className='row'>
+          <div className='col'>
+            <Routes>
+              <Route path='/' element={<AllHero />} />
+              <Route path='/hero/:id' element={<HeroPage />} />
+              <Route
+                path='/hero/:id/edit'
+                element={<div>Hero Edit Page</div>}
+              />
+              <Route path='/add-hero' element={<div>Add Hero</div>} />
+            </Routes>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
