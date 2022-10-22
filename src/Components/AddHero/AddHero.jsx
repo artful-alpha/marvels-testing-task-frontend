@@ -168,7 +168,7 @@ export default function AddHero() {
       </div>
       {imageUpload ? (
         <div className='col-12 col-md-5 form-panel'>
-          <img src={`http://localhost:3013${imageUpload}`} alt='' />
+          <img src={`${process.env.REACT_APP_API_URL}${imageUpload}`} alt='' />
         </div>
       ) : (
         false

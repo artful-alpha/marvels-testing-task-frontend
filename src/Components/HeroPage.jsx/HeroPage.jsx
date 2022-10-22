@@ -70,7 +70,7 @@ export default function HeroPage() {
           </div>
           <div className='col-12 col-md-4 sm-order-first'>
             <img
-              src={`http://localhost:3013${hero.img_hero}`}
+              src={`${process.env.REACT_APP_API_URL}${hero.img_hero}`}
               alt={`marvel hero ${hero.nickname}`}
             />
           </div>
