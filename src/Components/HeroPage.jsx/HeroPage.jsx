@@ -15,7 +15,7 @@ export default function HeroPage() {
   const isLoadedHeroes = status === "loaded";
 
   const deleteHero = () => {
-    baseServer.delete(`/api/heroes/${id}`);
+    baseServer.delete(`/api/heroes/${id}`).then(() => navigate("/"));
   };
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function HeroPage() {
                     Edit Hero
                   </button>
                 </Link>
-                <Link to={`/`} onClick={deleteHero}>
+                <Link to='' onClick={deleteHero}>
                   <button type='button' className='btn btn-danger'>
                     Delete Hero
                   </button>
