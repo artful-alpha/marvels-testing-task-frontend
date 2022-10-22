@@ -13,7 +13,7 @@ export default function AllHero() {
 
   useEffect(() => {
     dispatch(getAllHeroes());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={style.container}>
